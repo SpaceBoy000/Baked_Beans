@@ -54,6 +54,8 @@ code {
   text-align: center;
   letter-spacing: 0.0703846px;
 
+  margin: 50px auto;
+
   color: #FFFFFF;
 }
 
@@ -82,6 +84,14 @@ code {
   letter-spacing: 0.0703846px;
 
   color: #FFFFFF;
+
+  margin-top: 20px;
+}
+
+@media (max-width: 765px) {
+  .dashboard {
+    font-size: 22px;
+  }
 }
 
 .main-board {
@@ -98,6 +108,13 @@ code {
   font-weight: 400;
   font-size: 20px;
   line-height: 35px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 765px) {
+  .main-board {
+    font-size: 15px;
+  }
 }
 
 .input-box {
@@ -106,12 +123,12 @@ code {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 10px 20px;
+  padding: 10px 40px 10px 20px;
   gap: 10px;
 
   width: 100%;
   background: transparent;
-  /* border: 1px solid #C5AC70 !important; */
+  border: 1px solid #C5AC70 !important;
   border: none;
   color: white;
 }
@@ -178,7 +195,8 @@ code {
   }
 
   .title {
-    font-size: 21px;
+    font-size: 15px;
+    line-height: 30px;
   }
 
   .main-board {
@@ -196,4 +214,9 @@ code {
 
 .copyIcon:hover {
   cursor: pointer;
+}
+
+.logoTitle {
+  width: 80%;
+  margin-bottom: 30px;
 }

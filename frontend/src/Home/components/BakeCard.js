@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 import { config } from "../../config";
 import Connect from "./Connect";
 import { Toast } from "../../util"
+import logoTitle from "../../assets/logo-title.png";
 
 const Wrapper = styled("div")(({ theme }) => ({
   maxWidth: "1000px",
@@ -239,7 +240,8 @@ export default function BakeCard() {
     <div style={{ textAlign: "center" }}>
       <Wrapper>
         {/* {loading ? <Logo src={logoGif} ref={vidRef} id="video1" alt="site logo" /> : <Logo src={logoPng} ref={vidRef} id="video1" alt="site logo" />} */}
-        <div className="font-effect-shadow-multiple" style={{ fontWeight: "bold", fontSize: "70px", color: "#c0c602", marginBottom: "20px", marginLeft: "10px", fontFamily: "monospace", textAlign:"center" }}> BNB BANK</div>
+        {/* <div className="font-effect-shadow-multiple" style={{ fontWeight: "bold", fontSize: "70px", color: "#c0c602", marginBottom: "20px", marginLeft: "10px", fontFamily: "monospace", textAlign:"center" }}> BNB BANK</div> */}
+        <img src={ logoTitle } alt="" className="logoTitle"/>
         <Connect responsive = { false }/>
         <p className="title">
           Stake BNB to get daily passive rewards using BNB BANK - Safe verified audited smart contract built on Binance Smart Chain.
@@ -269,6 +271,20 @@ export default function BakeCard() {
             placeholder="Enter BNB Amount"
             onChange={ e => {setBakeBNB(e.target.value)}}>
           </input>
+          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+            <div className="input-box" style={{width:"49%"}}>
+              <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+                <div>Min.</div>
+                <div>0.01 BNB</div>
+              </Grid>
+            </div>
+            <div className="input-box" style={{width:"49%"}}>
+              <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+                <div>Max.</div>
+                <div>50 BNB</div>
+              </Grid>
+            </div>
+          </Grid>
           <button 
             className="main-button"
             disabled={wrongNetwork || !address || +bakeBNB === 0 || loading}
@@ -298,13 +314,25 @@ export default function BakeCard() {
             Withdraw Earnings
           </button>
 
-          <div style={{ textAlign:"center" }}>6.66% Daily Return for 30 days - 200% ROI(no limits, deposit any amount any times)</div>
-          <div style={{ textAlign:"center" }}>10% Referral Reward | 10% Dev fee (not affect on your deposit and earnings amount)</div>
+          {/* <div style={{ textAlign:"center" }}>6.66% Daily Return for 30 days - 200% ROI(no limits, deposit any amount any times)</div>
+          <div style={{ textAlign:"center" }}>10% Referral Reward | 10% Dev fee (not affect on your deposit and earnings amount)</div> */}
         </div>
-        <div className="nutritionFacts">
-
+        <div className="dashboard">Contract Info</div>
+        <div className="main-board">
+          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+            <div>Daily Return</div>
+            <div>6.67%</div>
+          </Grid>
+          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+            <div>APR</div>
+            <div>2400%</div>
+          </Grid>
+          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+            <div>Dev Fee</div>
+            <div>10%</div>
+          </Grid>
         </div>
-        <div className="second-board">
+        {/* <div className="second-board">
           <a href={ config.scanLink } target="_blank" style={{textDecoration: "none"}}>
             <button className="second-button">Verified Contract</button>
           </a>
@@ -312,7 +340,7 @@ export default function BakeCard() {
             <button className="second-button">Documentation</button>
           </a>
           <button className="second-button">Security Audit</button>
-        </div>
+        </div> */}
 
         <div className="dashboard">Referral Link</div>
         <div className="main-board">
@@ -328,7 +356,7 @@ export default function BakeCard() {
             <div>Your Double</div>
             <div>0.00 BNB</div>
           </Grid>
-          <div style={{width: "100%", display:"flex", alignItems:"center", border:"solid 2px white" }}>
+          <div style={{width: "100%", display:"flex", alignItems:"center", position: "relative"}}>
             <input 
               className="input-box"
               value = { address ? link: ''}
@@ -336,7 +364,9 @@ export default function BakeCard() {
               sx={{border: 'none'}}
               readOnly>
             </input>
-            <AiOutlineCopy className="copyIcon" onClick={() => { copyfunc(link) }}/>
+            <div style={{position:"absolute", right: "0px", top:"0px", bottom:"0px", height: "100%", display: "flex", alignItems:"center"}}>
+              <AiOutlineCopy className="copyIcon"  onClick={() => { copyfunc(link) }}/> 
+            </div>
           </div>
           <div style={{ textAlign:"center" }}>Get 10% of the BNB used to double from anyone who uses your referral link</div>
         </div>

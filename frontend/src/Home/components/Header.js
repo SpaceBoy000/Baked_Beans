@@ -1,8 +1,6 @@
 import { useRef } from "react";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/system";
-import logo from "../../assets/FullLogo.png";
-// import logoVideo from "../../assets/logo.gif"
 import Connect from "./Connect";
 
 const Wrapper = styled("div")(({ theme }) => ({
