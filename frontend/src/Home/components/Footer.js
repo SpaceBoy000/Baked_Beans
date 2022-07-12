@@ -13,7 +13,7 @@ import { config } from "../../config"
 const SocailIcon = styled(IconButton)(({ theme }) => ({
   background: "#123F49",
   color: "white",
-  margin: "20px 3px",
+  margin: "20px 3px 0 3px",
   borderRadius: "30px",
   "&:hover" :{
     color: "#C5AC70",
@@ -25,7 +25,6 @@ const SocailIcon = styled(IconButton)(({ theme }) => ({
 
 const FooterBox = styled(Box)(
   ({ theme }) => `
-  padding-left: 0px !importantt;
   @media only screen and (max-width: 900px){
     margin-top: 30px;
   }
@@ -38,7 +37,7 @@ const FooterBox = styled(Box)(
 export default function Footer() {
   return (
     <>
-      <FooterBox component="div" sx={{ marginLeft:"-10px", px: 2, textAlign: "center"}}>
+      <FooterBox component="div" sx={{ px: 2, textAlign: "center" }}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Box className="socialicon_wrap">
@@ -51,7 +50,7 @@ export default function Footer() {
               {/* <a href="https://discord.gg/ZC4Q49e7uE" target="_blank">
                 <SocailIcon><FaDiscord /></SocailIcon>
               </a> */}
-              <a href="https://BNBBank.gitbook.io" target="_blank">
+              <a href="https://bnb-bank.gitbook.io/welcome-to-gitbook/io" target="_blank">
                 <SocailIcon><AutoStoriesIcon  /></SocailIcon>
               </a>
               <a href={ config.scanLink } target="_blank">

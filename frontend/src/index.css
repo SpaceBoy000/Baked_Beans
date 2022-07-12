@@ -49,7 +49,7 @@ code {
   font-weight: 400;
   font-size: 30px;
   line-height: 55px;
-  /* or 183% */
+  margin-bottom: 30px;
 
   text-align: center;
   letter-spacing: 0.0703846px;
@@ -155,4 +155,37 @@ code {
 .second-board {
   text-align: -webkit-center;
   margin: 50px 0;
+}
+
+/* .main-title {
+  font-weight: bold;
+  font-size: 80px;
+  color: #c0c602;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-family: monospace;
+  text-align: center;
+} 
+*/
+
+.logo {
+  width: 80px;
+}
+
+@media only screen and (max-width: 767px) {
+  .logo {
+    display: none;
+  }
+
+  .title {
+    font-size: 21px;
+  }
+
+  .main-board {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 765px) {
+  
 }

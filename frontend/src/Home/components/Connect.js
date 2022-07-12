@@ -6,7 +6,7 @@ import { useAuthContext } from "../../providers/AuthProvider";
 const ConnectButton = styled(Button)(({ theme }) => ({
   background: "#C5AC70 !important",
   borderRadius: "16px",
-  marginTop: "-40px",
+  // marginTop: "-40px",
   padding: "20px",
   fontFamily: 'Krona One',
   float: "right",

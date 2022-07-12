@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import LinearProgress from "@mui/material/LinearProgress";
+import { AiOutlineCopy } from "react-icons/ai";
 import Divider from "@mui/material/Divider";
 import { styled } from "@mui/system";
 import { useLocation } from "react-router-dom";
@@ -23,18 +24,14 @@ import logoPng from "../../assets/logo.png";
 import Connect from "./Connect";
 // import Gif from 'react-gif';
 
-const CardWrapper = styled(Card)({
-  background: "rgb(251 241 225)",
-  marginBottom: 24,
-});
-
 const Wrapper = styled("div")(({ theme }) => ({
   maxWidth: "1000px",
   width: "70%",
-  margin: "50px auto",
+  margin: "0 auto",
   color: "white",
   [theme.breakpoints.down("sm")]: {
     maxWidth: "100%",
+    width: "90%"
   },
 }));
 
@@ -75,7 +72,32 @@ export default function BakeCard() {
   const [loading, setLoading] = useState(false);
   const [win, setWin] = useState(null);
   const query = useQuery();
-  var theURL = "https://giphy.com/embed/RLj49U7KXsW9SmrLB6";
+
+  const link = `${window.origin}?ref=${address}`;
+  console.log("link: ", link);
+
+  const nutritionFacts = [
+    {
+      label: "Daily Return",
+      value: 8,
+    },
+    {
+      label: "APR",
+      value: "2,920",
+    },
+    {
+      label: "Dev Fee",
+      value: 2,
+    },
+    {
+      label: "Treasury",
+      value: 2,
+    },
+    {
+      label: "Invested Back in Amplifier",
+      value: 3,
+    },
+  ];
 
   const fetchContractBNBBalance = () => {
     if (!web3 || wrongNetwork) {
@@ -203,9 +225,8 @@ export default function BakeCard() {
     <div style={{ textAlign: "center" }}>
       <Wrapper>
         {/* {loading ? <Logo src={logoGif} ref={vidRef} id="video1" alt="site logo" /> : <Logo src={logoPng} ref={vidRef} id="video1" alt="site logo" />} */}
-        <div className="font-effect-shadow-multiple" style={{ fontWeight: "bold", fontSize: "60px", color: "#c0c602", marginTop: "20px", marginBottom: "10px", marginLeft: "10px", fontFamily: "monospace", textAlign:"center" }}> BNB BANK</div>
-        <Connect responsive={false} />
-
+        <div className="font-effect-shadow-multiple" style={{ fontWeight: "bold", fontSize: "70px", color: "#c0c602", marginBottom: "20px", marginLeft: "10px", fontFamily: "monospace", textAlign:"center" }}> BNB BANK</div>
+        <Connect responsive = { false }/>
         <p className="title">
           Stake BNB to get daily passive rewards using BNB BANK - Safe verified audited smart contract built on Binance Smart Chain.
         </p>
@@ -266,11 +287,16 @@ export default function BakeCard() {
           <div style={{ textAlign:"center" }}>6.66% Daily Return for 30 days - 200% ROI(no limits, deposit any amount any times)</div>
           <div style={{ textAlign:"center" }}>10% Referral Reward | 10% Dev fee (not affect on your deposit and earnings amount)</div>
         </div>
+        <div className="nutritionFacts">
+
+        </div>
         <div className="second-board">
           <a href={ config.scanLink } target="_blank" style={{textDecoration: "none"}}>
-          <button className="second-button">Verified Contract</button>
+            <button className="second-button">Verified Contract</button>
           </a>
-          <button className="second-button">Documentation</button>
+          <a href="https://bnb-bank.gitbook.io/welcome-to-gitbook/" target="_blank" style={{textDecoration: "none"}}>
+            <button className="second-button">Documentation</button>
+          </a>
           <button className="second-button">Security Audit</button>
         </div>
 
@@ -288,7 +314,13 @@ export default function BakeCard() {
             <div>Your Double</div>
             <div>0.00 BNB</div>
           </Grid>
-          <input className="input-box" placeholder="Connect Wallet"></input>
+          <input 
+            className="input-box"
+            value = { address ? link: ''}
+            placeholder="Connect Wallet"
+            readOnly>
+            {/* <AiOutlineCopy/> */}
+          </input>
           <div style={{ textAlign:"center" }}>Get 10% of the BNB used to double from anyone who uses your referral link</div>
         </div>
       </Wrapper>

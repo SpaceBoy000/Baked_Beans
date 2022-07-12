@@ -21,12 +21,11 @@ export default function Home() {
 
   return (
     <Wrapper>
-      <Connect />
-      {/* <Header /> */}
+      <Header />
       <BakeCard />
       {/* <NutritionFacts />
-      <InfoBox/> */}
-      {/* <ReferralLink address={address} /> */}
+      <InfoBox/>
+      <ReferralLink address={address} /> */}
       <Footer />
     </Wrapper>
   );
