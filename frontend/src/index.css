@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One');
 @import url("https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple");
 
 body {
@@ -9,7 +9,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: radial-gradient(circle at top right,rgba(23,33,94,.9) 0,#f2b04f 25%); */
-  background: linear-gradient(45deg, rgb(242, 98, 247), skyblue);
+  background: #06232A;
+  position: relative;
 }
 
 code {
@@ -40,4 +41,118 @@ code {
   border-radius: 0px !important;
   border: 2px solid #b92be9;
   box-shadow: none !important;
+}
+
+.title {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 55px;
+  /* or 183% */
+
+  text-align: center;
+  letter-spacing: 0.0703846px;
+
+  color: #FFFFFF;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+
+  /* position: absolute; */
+  width: 100%;
+  height: 70px;
+
+  background: #081B20;
+
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 55px;
+  /* identical to box height, or 183% */
+
+  text-align: center;
+  letter-spacing: 0.0703846px;
+
+  color: #FFFFFF;
+}
+
+.main-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 56px;
+  gap: 30px;
+  background-color: #123F49;
+
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.input-box {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px 20px;
+  gap: 10px;
+
+  width: 100%;
+  background: transparent;
+  border: 1px solid #C5AC70 !important;
+
+  color: white;
+}
+
+.main-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+  width: 100%;
+
+  color: white;
+  background: #8B8B8B;
+}
+
+.second-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+  width: 90%;
+  background: #C5AC70;
+
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 55px;
+
+  text-align: center;
+  letter-spacing: 0.0703846px;
+
+  color: #FFFFFF;
+  margin: 20px 0;
+}
+
+.second-board {
+  text-align: -webkit-center;
+  margin: 50px 0;
 }

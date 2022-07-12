@@ -268,7 +268,7 @@ library SafeMath {
     }
 }
 
-contract Amplifier is Context, Ownable {
+contract BNB_BANK is Context, Ownable {
     using SafeMath for uint256;
 
     uint256 private EGGS_TO_HATCH_1MINERS = 864000;//for final version should be seconds in a day

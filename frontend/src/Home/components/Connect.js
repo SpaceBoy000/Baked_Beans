@@ -4,13 +4,23 @@ import { styled } from "@mui/system";
 import { useAuthContext } from "../../providers/AuthProvider";
 
 const ConnectButton = styled(Button)(({ theme }) => ({
-  position: "fixed",
-  right: 48,
-  top: 48,
+  background: "#C5AC70 !important",
+  borderRadius: "16px",
+  marginTop: "-40px",
+  padding: "20px",
+  fontFamily: 'Krona One',
+  float: "right",
+  fontStyle: "normal",
+  fontWeight: "400",
+  fontSize: "20px",
+  lineHeight: "20px",
+  /* identical to box height, or 100% */
+  letterSpacing: "0.0703846px",
+  color: "#FFFFFF",
+
   [theme.breakpoints.down("md")]: {
     display: "none",
   },
-  backgroundColor: "#fbf1e1",
   // '&:hover' : {
 
   // }
@@ -23,7 +33,7 @@ const SmallScreenConnectButton = styled(Button)(({ theme }) => ({
   width: "95%",
   marginLeft: "auto",
   marginRight: "auto",
-  backgroundColor: "#43a5f3",
+  backgroundColor: "#C5AC70",
   [theme.breakpoints.down("md")]: {
     display: "block",
   },

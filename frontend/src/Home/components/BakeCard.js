@@ -29,9 +29,10 @@ const CardWrapper = styled(Card)({
 });
 
 const Wrapper = styled("div")(({ theme }) => ({
-  maxWidth: 400,
-  margin: "0 auto",
-  marginBottom: "20px",
+  maxWidth: "1000px",
+  width: "70%",
+  margin: "50px auto",
+  color: "white",
   [theme.breakpoints.down("sm")]: {
     maxWidth: "100%",
   },
@@ -75,34 +76,6 @@ export default function BakeCard() {
   const [win, setWin] = useState(null);
   const query = useQuery();
   var theURL = "https://giphy.com/embed/RLj49U7KXsW9SmrLB6";
-
-  // useEffect(() => {
-  //   window.onload = () => {
-  //     var iframeTag = document.querySelector("iframe");
-  //     console.log('[Tag] = ', iframeTag);
-  //     var winTag = iframeTag.contentWindow;
-  //     console.log('[WinTag] = ', winTag)
-  //     winTag.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-
-  //     setWin(winTag);
-  //     pauseVideo();
-  //   }
-  // }, []);
-
-  // const playVideo = () => {
-  //   if (win) {
-  //     console.log('[123] = Play');
-  //     win.postMessage('playVideo', theURL);
-  //   }
-  // }
-
-  // const pauseVideo = () => {
-  //   console.log('[Pause] = ', win);
-  //   if (win) {
-  //     console.log('[123] = Pause');
-  //     win.postMessage('pauseVideo', theURL);
-  //   }
-  // }
 
   const fetchContractBNBBalance = () => {
     if (!web3 || wrongNetwork) {
@@ -176,14 +149,8 @@ export default function BakeCard() {
     return ref;
   };
 
-  // var myVideo = document.querySelector("video1");
-
   const bake = async () => {
     setLoading(true);
-    // pauseVideo();
-    // win.postMessage("pauseVideo", theURL);
-    // var video = document.getElementById("video1");
-    // if (video.paused){video.play();} else {video.pause();}
 
     const ref = getRef();
 
@@ -235,119 +202,97 @@ export default function BakeCard() {
   return (
     <div style={{ textAlign: "center" }}>
       <Wrapper>
-      {loading ? <Logo src={logoGif} ref={vidRef} id="video1" alt="site logo" /> : <Logo src={logoPng} ref={vidRef} id="video1" alt="site logo" />}
-        {/* <video id="video1" ref={vidRef} src={logoVideo} width={"100%"} type="video/mp4"></video> */}
-        {/* <div style={{ width: "100%", height: "0", paddingBottom: "36%", position: "relative" }}>
-          <iframe src="https://giphy.com/embed/RLj49U7KXsW9SmrLB6" width="100%" style={{ border: "100px" }} allowFullScreen>
-          </iframe>
-        </div> */}
-        <div className="font-effect-neon" style={{ fontWeight: "bold", fontSize: "60px", color: "#e30feb", marginTop: "20px", marginBottom: "10px", marginLeft: "10px", fontFamily: "monospace" }}> Amplifier</div>
+        {/* {loading ? <Logo src={logoGif} ref={vidRef} id="video1" alt="site logo" /> : <Logo src={logoPng} ref={vidRef} id="video1" alt="site logo" />} */}
+        <div className="font-effect-shadow-multiple" style={{ fontWeight: "bold", fontSize: "60px", color: "#c0c602", marginTop: "20px", marginBottom: "10px", marginLeft: "10px", fontFamily: "monospace", textAlign:"center" }}> BNB BANK</div>
         <Connect responsive={false} />
-        <Typography variant="h6" marginTop={-3}>
-          <br /> The First PLS Miner <br /><br />The PLS Reward Pool with the highest daily return and lowest dev fee
-        </Typography>
-      </Wrapper>
-      <div>
 
-        {/* <p>
-          <a href="https://giphy.com/gifs/transparent-RLj49U7KXsW9SmrLB6">
-            via GIPHY
+        <p className="title">
+          Stake BNB to get daily passive rewards using BNB BANK - Safe verified audited smart contract built on Binance Smart Chain.
+        </p>
+
+        <div className="dashboard">Dashboard</div>
+        <div className="main-board">
+          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+            <div>Contract</div>
+            <div>{ contractBNB } BNB</div>
+          </Grid>
+          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+            <div>Wallet</div>
+            <div>{ walletBalance.bnb } BNB</div>
+          </Grid>
+          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+            <div>Your Double</div>
+            <div>{ walletBalance.beans } BNB</div>
+          </Grid>
+
+          <input 
+            className="input-box"
+            type="number"
+            min={0}
+            max={+walletBalance.bnb}
+            value={bakeBNB}
+            placeholder="Enter BNB Amount"
+            onChange={ e => {setBakeBNB(e.target.value)}}>
+          </input>
+          <button 
+            className="main-button"
+            disabled={wrongNetwork || !address || +bakeBNB === 0 || loading}
+            onClick={ bake }
+          >
+            Double Your BNB
+          </button>
+
+          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+            <div>Your Earnings</div>
+            <div>0.00 BNB</div>
+          </Grid>
+
+          <button
+            className="main-button"
+            disabled={wrongNetwork || !address || loading}
+            onClick={reBake}
+          >
+            Double Earnings
+          </button>
+
+          <button 
+            className="main-button"
+            disabled={wrongNetwork || !address || loading}
+            onClick={eatBeans}
+          >
+            Withdraw Earnings
+          </button>
+
+          <div style={{ textAlign:"center" }}>6.66% Daily Return for 30 days - 200% ROI(no limits, deposit any amount any times)</div>
+          <div style={{ textAlign:"center" }}>10% Referral Reward | 10% Dev fee (not affect on your deposit and earnings amount)</div>
+        </div>
+        <div className="second-board">
+          <a href={ config.scanLink } target="_blank" style={{textDecoration: "none"}}>
+          <button className="second-button">Verified Contract</button>
           </a>
-        </p>  */}
-      </div>
-      <CardWrapper className="wrapper">
-        {loading && <LinearProgress color="secondary" />}
+          <button className="second-button">Documentation</button>
+          <button className="second-button">Security Audit</button>
+        </div>
 
-        <CardContent>
-          <Grid
-            container
-            justifyContent="space-between"
-            alignItems="center"
-            mt={3}
-          >
-            <Typography variant="body1">Contract</Typography>
-            <Typography variant="h5">{contractBNB} PLS</Typography>
+        <div className="dashboard">Referral Link</div>
+        <div className="main-board">
+          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+            <div>Invited</div>
+            <div>0 Users</div>
           </Grid>
-          <Grid
-            container
-            justifyContent="space-between"
-            alignItems="center"
-            mt={3}
-          >
-            <Typography variant="body1">Wallet</Typography>
-            <Typography variant="h5">{walletBalance.bnb} PLS</Typography>
+          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+            <div>Earned</div>
+            <div>0.00 BNB</div>
           </Grid>
-          <Grid
-            container
-            justifyContent="space-between"
-            alignItems="center"
-            mt={3}
-          >
-            <Typography variant="body1">Your Power</Typography>
-            <Typography variant="h5">{walletBalance.beans} AMP</Typography>
+          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
+            <div>Your Double</div>
+            <div>0.00 BNB</div>
           </Grid>
-          <Box paddingTop={4} paddingBottom={3}>
-            <Box>
-              <PriceInput
-                max={+walletBalance.bnb}
-                value={bakeBNB}
-                onChange={(value) => onUpdateBakeBNB(value)}
-              />
-            </Box>
-            <Box marginTop={3} marginBottom={3}>
-              <Button
-                variant="contained"
-                fullWidth
-                className="mybutton"
-                disabled={wrongNetwork || !address || +bakeBNB === 0 || loading}
-                onClick={bake}
-              >
-                Amplify
-              </Button>
-            </Box>
-            <Divider />
-            <Grid
-              container
-              justifyContent="space-between"
-              alignItems="center"
-              mt={3}
-            >
-              <Typography variant="body1" fontWeight="bolder">
-                Your Rewards
-              </Typography>
-              <Typography variant="h5" fontWeight="bolder">
-                {walletBalance.rewards} PLS
-              </Typography>
-            </Grid>
-            <ButtonContainer container>
-              <Grid item flexGrow={1} marginRight={1} marginTop={3}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  fullWidth
-                  className="mybutton"
-                  disabled={wrongNetwork || !address || loading}
-                  onClick={reBake}
-                >
-                  Multiply
-                </Button>
-              </Grid>
-              <Grid item flexGrow={1} marginLeft={1} marginTop={3}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  fullWidth
-                  className="mybutton"
-                  disabled={wrongNetwork || !address || loading}
-                  onClick={eatBeans}
-                >
-                  Claim
-                </Button>
-              </Grid>
-            </ButtonContainer>
-          </Box>
-        </CardContent>
-      </CardWrapper>
+          <input className="input-box" placeholder="Connect Wallet"></input>
+          <div style={{ textAlign:"center" }}>Get 10% of the BNB used to double from anyone who uses your referral link</div>
+        </div>
+      </Wrapper>
+      
     </div>
   );
 }

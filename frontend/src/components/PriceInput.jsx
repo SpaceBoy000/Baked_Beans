@@ -3,8 +3,12 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/system";
 
 const BnbInput = styled("input")({
-  fontSize: 24,
-  fontWeight: 500,
+  fontFamily: "Krona One !important",
+  fontStyle: "normal",
+  fontWeight: "400",
+  fontSize: "20px",
+  lineHeight: "35px",
+
   padding: "12px 90px 12px 16px",
   textAlign: "right",
   borderRadius: 0,
