@@ -111,8 +111,8 @@ code {
 
   width: 100%;
   background: transparent;
-  border: 1px solid #C5AC70 !important;
-
+  /* border: 1px solid #C5AC70 !important; */
+  border: none;
   color: white;
 }
 
@@ -188,4 +188,12 @@ code {
 
 @media (max-width: 765px) {
   
+}
+
+.copyIcon {
+  margin-right: 15px;
+}
+
+.copyIcon:hover {
+  cursor: pointer;
 }

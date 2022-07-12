@@ -13,16 +13,12 @@ import { styled } from "@mui/system";
 import { useLocation } from "react-router-dom";
 import Web3 from "web3";
 
-import PriceInput from "../../components/PriceInput";
 import { useContractContext } from "../../providers/ContractProvider";
 import { useAuthContext } from "../../providers/AuthProvider";
 import { useEffect, useState } from "react";
 import { config } from "../../config";
-// import "../../index.css"
-import logoGif from "../../assets/logo.gif";
-import logoPng from "../../assets/logo.png";
 import Connect from "./Connect";
-// import Gif from 'react-gif';
+import { Toast } from "../../util"
 
 const Wrapper = styled("div")(({ theme }) => ({
   maxWidth: "1000px",
@@ -54,6 +50,24 @@ let timeout = null;
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
+}
+
+const copyfunc = async (text) => {
+  try {
+    const toCopy = text;
+    await navigator.clipboard.writeText(toCopy);
+    Toast.fire({
+      icon: 'success',
+      title: "Copied to clipboard!"
+    });
+  }
+  catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+}
+
+export const numberWithCommas = (x, digits = 3) => {
+  return Number(x).toLocaleString(undefined, { maximumFractionDigits: digits });
 }
 
 export default function BakeCard() {
@@ -314,13 +328,16 @@ export default function BakeCard() {
             <div>Your Double</div>
             <div>0.00 BNB</div>
           </Grid>
-          <input 
-            className="input-box"
-            value = { address ? link: ''}
-            placeholder="Connect Wallet"
-            readOnly>
-            {/* <AiOutlineCopy/> */}
-          </input>
+          <div style={{width: "100%", display:"flex", alignItems:"center", border:"solid 2px white" }}>
+            <input 
+              className="input-box"
+              value = { address ? link: ''}
+              placeholder="Connect Wallet"
+              sx={{border: 'none'}}
+              readOnly>
+            </input>
+            <AiOutlineCopy className="copyIcon" onClick={() => { copyfunc(link) }}/>
+          </div>
           <div style={{ textAlign:"center" }}>Get 10% of the BNB used to double from anyone who uses your referral link</div>
         </div>
       </Wrapper>
