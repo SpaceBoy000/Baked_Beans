@@ -141,9 +141,14 @@ code {
   padding: 10px 20px;
   gap: 10px;
   width: 100%;
+  border: none;
 
   color: white;
   background: #8B8B8B;
+}
+
+.main-button:hover {
+  background: #5a5858;
 }
 
 .second-button {

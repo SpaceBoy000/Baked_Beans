@@ -82,6 +82,8 @@ export default function BakeCard() {
     beans: 0,
     rewards: 0,
   });
+  const [referralCount, setReferralCount] = useState(0);
+  const [referralAmount, setReferralAmount] = useState(0);
   const [bakeBNB, setBakeBNB] = useState(0);
   const [calculatedBeans, setCalculatedBeans] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -89,7 +91,7 @@ export default function BakeCard() {
   const query = useQuery();
 
   const link = `${window.origin}?ref=${address}`;
-  console.log("link: ", link);
+  // console.log("link: ", link);
 
   const nutritionFacts = [
     {
@@ -131,6 +133,9 @@ export default function BakeCard() {
         beans: 0,
         rewards: 0,
       });
+      setReferralCount(0);
+      setReferralAmount(0);
+
       return;
     }
 
@@ -138,15 +143,15 @@ export default function BakeCard() {
       const [bnbAmount, beansAmount, rewardsAmount] = await Promise.all([
         getBnbBalance(address),
         contract.methods
-          .getMyMiners(address)
-          .call()
+          .getMyMiners()
+          .call({from: address})
           .catch((err) => {
             console.error("myminers", err);
             return 0;
           }),
         contract.methods
-          .beanRewards(address)
-          .call()
+          .beanRewards()
+          .call({from: address})
           .catch((err) => {
             console.error("beanrewards", err);
             return 0;
@@ -157,6 +162,36 @@ export default function BakeCard() {
         beans: beansAmount,
         rewards: fromWei(`${rewardsAmount}`),
       });
+
+      console.log("rewardsAmount: ", rewardsAmount, " : ", fromWei(`${rewardsAmount}`));
+
+      const [referralCount, referralAmount] = await Promise.all([
+        contract.methods.totalreferralCount(address)
+                .call()
+                .catch((err) => {
+                  console.error("fetch error", err);
+                  return 0;
+                }),
+        contract.methods.totalClaimedEggs(address)
+                .call()
+                .catch((err) => {
+                  console.error("fetch error", err);
+                  return 0;
+                }),
+      ]);
+
+      const rewards = await contract.methods.calculateEggSell(referralAmount)
+                .call()
+                .catch((err) => {
+                  console.error("fetch error", err);
+                  return 0;
+                });
+
+      setReferralCount(referralCount);
+      setReferralAmount(fromWei(`${rewards}`));
+
+      console.log("referralCount: ", referralCount);
+      console.log("referralAmount: ", fromWei(`${rewards}`));
     } catch (err) {
       console.error(err);
       setWalletBalance({
@@ -164,6 +199,8 @@ export default function BakeCard() {
         beans: 0,
         rewards: 0,
       });
+      setReferralCount(0);
+      setReferralAmount(0);
     }
   };
 
@@ -259,7 +296,7 @@ export default function BakeCard() {
           </Grid>
           <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
             <div>Your Double</div>
-            <div>{ walletBalance.beans } BNB</div>
+            <div>{ walletBalance.beans } Double</div>
           </Grid>
 
           <input 
@@ -272,15 +309,15 @@ export default function BakeCard() {
             onChange={ e => {setBakeBNB(e.target.value)}}>
           </input>
           <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
-            <div className="input-box" style={{width:"49%"}}>
+            <div className="input-box" style={{width:"49%", padding:"10px 5px"}}>
               <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
-                <div>Min.</div>
+                <div>Min</div>
                 <div>0.01 BNB</div>
               </Grid>
             </div>
-            <div className="input-box" style={{width:"49%"}}>
+            <div className="input-box" style={{width:"49%", padding:"10px 5px"}}>
               <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
-                <div>Max.</div>
+                <div>Max</div>
                 <div>50 BNB</div>
               </Grid>
             </div>
@@ -295,7 +332,7 @@ export default function BakeCard() {
 
           <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
             <div>Your Earnings</div>
-            <div>0.00 BNB</div>
+            <div>{ walletBalance.rewards } BNB</div>
           </Grid>
 
           <button
@@ -346,15 +383,11 @@ export default function BakeCard() {
         <div className="main-board">
           <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
             <div>Invited</div>
-            <div>0 Users</div>
+            <div>{ referralCount } Users</div>
           </Grid>
           <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
             <div>Earned</div>
-            <div>0.00 BNB</div>
-          </Grid>
-          <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
-            <div>Your Double</div>
-            <div>0.00 BNB</div>
+            <div>{ referralAmount } BNB</div>
           </Grid>
           <div style={{width: "100%", display:"flex", alignItems:"center", position: "relative"}}>
             <input 
