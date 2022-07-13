@@ -312,7 +312,7 @@ export default function BakeCard() {
             <div className="input-box" style={{width:"49%", padding:"10px 5px"}}>
               <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
                 <div>Min</div>
-                <div>0.01 BNB</div>
+                <div>0.1 BNB</div>
               </Grid>
             </div>
             <div className="input-box" style={{width:"49%", padding:"10px 5px"}}>
