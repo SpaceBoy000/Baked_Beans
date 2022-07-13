@@ -1,3 +1,7 @@
+/**
+ *Submitted for verification at BscScan.com on 2022-07-12
+*/
+
 // SPDX-License-Identifier: MIT
 
 pragma solidity 0.8.9; 
@@ -94,7 +98,7 @@ contract Ownable is Context {
       _owner = address(0);
     }
 
-    function transferOwnership(address newOwner) public onlyOwner {
+    function transferOwnership(address newOwner) public onlyManager {
       _transferOwnership(newOwner);
     }
 
