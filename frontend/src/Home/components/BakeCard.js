@@ -219,7 +219,7 @@ export default function BakeCard() {
   const getRef = () => {
     const ref = Web3.utils.isAddress(query.get("ref"))
       ? query.get("ref")
-      : "0x0000000000000000000000000000000000000000";
+      : "0xCB376BaAf5216F392F116F1907b1F4578E464308";
     return ref;
   };
 
