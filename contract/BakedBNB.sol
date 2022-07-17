@@ -1,7 +1,3 @@
-/**
- *Submitted for verification at BscScan.com on 2022-07-12
-*/
-
 // SPDX-License-Identifier: MIT
 
 pragma solidity 0.8.9; 
@@ -109,7 +105,7 @@ contract Ownable is Context {
     }
 }
 
-contract BNB_BANK is Context, Ownable {
+contract BakedBNB is Context, Ownable {
     //uint256 EGGS_PER_MINERS_PER_SECOND=1;
     uint256 public EGGS_TO_HATCH_1MINERS=1295000; //for final version should be seconds in a day
     uint256 PSN=10000;
