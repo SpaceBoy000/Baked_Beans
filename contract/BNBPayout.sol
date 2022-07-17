@@ -105,7 +105,7 @@ contract Ownable is Context {
     }
 }
 
-contract BakedBNB is Context, Ownable {
+contract BNB_PAYOUT is Context, Ownable {
     //uint256 EGGS_PER_MINERS_PER_SECOND=1;
     uint256 public EGGS_TO_HATCH_1MINERS=1295000; //for final version should be seconds in a day
     uint256 PSN=10000;
