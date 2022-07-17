@@ -144,11 +144,12 @@ code {
   border: none;
 
   color: white;
-  background: #8B8B8B;
+  background: #C5AC70;
 }
 
 .main-button:hover {
-  background: #5a5858;
+  background: #43a5f3;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .second-button {

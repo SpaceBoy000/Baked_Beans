@@ -281,7 +281,7 @@ export default function BakeCard() {
         <img src={ logoTitle } alt="" className="logoTitle"/>
         <Connect responsive = { false }/>
         <p className="title">
-          Stake BNB to get daily passive rewards using BNB BANK - Safe verified audited smart contract built on Binance Smart Chain.
+          The BNB Pool with the finest daily return and highest referral reward
         </p>
 
         <div className="dashboard">Dashboard</div>
@@ -295,8 +295,8 @@ export default function BakeCard() {
             <div>{ walletBalance.bnb } BNB</div>
           </Grid>
           <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
-            <div>Your Double</div>
-            <div>{ walletBalance.beans } Double</div>
+            <div>Your Baked BNB</div>
+            <div>{ walletBalance.beans } Baked BNB</div>
           </Grid>
 
           <input 
@@ -327,7 +327,7 @@ export default function BakeCard() {
             disabled={wrongNetwork || !address || +bakeBNB === 0 || loading}
             onClick={ bake }
           >
-            Double Your BNB
+            Bake BNB
           </button>
 
           <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
@@ -340,7 +340,7 @@ export default function BakeCard() {
             disabled={wrongNetwork || !address || loading}
             onClick={reBake}
           >
-            Double Earnings
+            RE-BAKE
           </button>
 
           <button 
@@ -348,13 +348,13 @@ export default function BakeCard() {
             disabled={wrongNetwork || !address || loading}
             onClick={eatBeans}
           >
-            Withdraw Earnings
+            EAT BNB
           </button>
 
           {/* <div style={{ textAlign:"center" }}>6.66% Daily Return for 30 days - 200% ROI(no limits, deposit any amount any times)</div>
           <div style={{ textAlign:"center" }}>10% Referral Reward | 10% Dev fee (not affect on your deposit and earnings amount)</div> */}
         </div>
-        <div className="dashboard">Contract Info</div>
+        <div className="dashboard">Nutrition Facts</div>
         <div className="main-board">
           <Grid style={{display:"flex", justifyContent:"space-between", width:"100%"}}>
             <div>Daily Return</div>
@@ -369,15 +369,6 @@ export default function BakeCard() {
             <div>10%</div>
           </Grid>
         </div>
-        {/* <div className="second-board">
-          <a href={ config.scanLink } target="_blank" style={{textDecoration: "none"}}>
-            <button className="second-button">Verified Contract</button>
-          </a>
-          <a href="https://bnb-bank.gitbook.io/welcome-to-gitbook/" target="_blank" style={{textDecoration: "none"}}>
-            <button className="second-button">Documentation</button>
-          </a>
-          <button className="second-button">Security Audit</button>
-        </div> */}
 
         <div className="dashboard">Referral Link</div>
         <div className="main-board">
@@ -401,7 +392,7 @@ export default function BakeCard() {
               <AiOutlineCopy className="copyIcon"  onClick={() => { copyfunc(link) }}/> 
             </div>
           </div>
-          <div style={{ textAlign:"center" }}>Get 10% of the BNB used to double from anyone who uses your referral link</div>
+          <div style={{ textAlign:"center" }}>Earn 10% of the BNB used to BAKE BNB from anyone who uses your referral link</div>
         </div>
       </Wrapper>
       

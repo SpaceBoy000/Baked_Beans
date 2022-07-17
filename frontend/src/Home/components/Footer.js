@@ -41,16 +41,16 @@ export default function Footer() {
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Box className="socialicon_wrap">
-              <a href="https://twitter.com/bnbbankofficial?s=21&t=NcLAf_dFx233cqDxGDKfsw" target="_blank">
+              <a href="https://mobile.twitter.com/bakedbnb" target="_blank">
                 <SocailIcon><TwitterIcon  /></SocailIcon>
               </a>
-              <a href="https://t.me/BnbBankOfficial" target="_blank">
+              <a href="https://t.me/Bakedbnb" target="_blank">
                 <SocailIcon><TelegramIcon /></SocailIcon>
               </a>
               {/* <a href="https://discord.gg/ZC4Q49e7uE" target="_blank">
                 <SocailIcon><FaDiscord /></SocailIcon>
               </a> */}
-              <a href="https://bnb-bank.gitbook.io/welcome-to-gitbook" target="_blank">
+              <a href="https://baked-bnb.gitbook.io/welcome-to-gitbook/" target="_blank">
                 <SocailIcon><AutoStoriesIcon  /></SocailIcon>
               </a>
               <a href={ config.scanLink } target="_blank">

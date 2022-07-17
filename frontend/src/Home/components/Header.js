@@ -8,6 +8,7 @@ const Wrapper = styled("div")(({ theme }) => ({
   padding: "20px 70px",
   display: "flex",
   justifyContent:"space-between",
+  float: "right",
   [theme.breakpoints.down("md")]: {
     h5: {
       fontSize: 20,
@@ -20,7 +21,7 @@ export default function Header() {
   const vidRef = useRef(null);
   return (
     <Wrapper>
-      <img src="./favicon.png" alt="" className="logo"/>
+      {/* <img src="./favicon.png" alt="" className="logo"/> */}
       <Connect/>
     </Wrapper>
   );
