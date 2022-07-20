@@ -41,25 +41,33 @@ export default function Footer() {
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Box className="socialicon_wrap">
-              <a href="https://mobile.twitter.com/bakedbnb" target="_blank">
+              <a href="https://mobile.twitter.com/bnbpayout?s=21&t=Ya79MpDMj4eJLVSJMeUOXQ" target="_blank">
                 <SocailIcon><TwitterIcon  /></SocailIcon>
               </a>
-              <a href="https://t.me/Bakedbnb" target="_blank">
+              <a href="https://t.me/BNBPAYOUTCOM" target="_blank">
                 <SocailIcon><TelegramIcon /></SocailIcon>
               </a>
               {/* <a href="https://discord.gg/ZC4Q49e7uE" target="_blank">
                 <SocailIcon><FaDiscord /></SocailIcon>
               </a> */}
-              <a href="https://baked-bnb.gitbook.io/welcome-to-gitbook/" target="_blank">
+              {/* <a href="https://baked-bnb.gitbook.io/welcome-to-gitbook/" target="_blank">
                 <SocailIcon><AutoStoriesIcon  /></SocailIcon>
-              </a>
-              <a href={ config.scanLink } target="_blank">
+              </a> */}
+              {/* <a href={ config.scanLink } target="_blank">
                 <SocailIcon><SiBinance  /></SocailIcon>                       
-              </a>
-              <a href="" target="_blank">
+              </a> */}
+              {/* <a href="" target="_blank">
                 <SocailIcon><VerifiedUserRoundedIcon  /></SocailIcon>
-              </a>
+              </a> */}
             </Box>
+            <div style={{color:"white", fontSize:"20px", paddingTop:"30px"}}>
+              <div>
+                Copyright © 2022 BNB Payout
+              </div>
+              <div>
+                Powered and secured through the Binance Smart Chain
+              </div>
+            </div>
           </Grid>
         </Grid> 
       </FooterBox>
