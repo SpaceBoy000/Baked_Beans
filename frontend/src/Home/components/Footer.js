@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Grid";
 
 import { config } from "../../config";
-import esIcon from "../assets/PSIcon.svg";
+import esIcon from "../assets/ESIcon.png";
 import tgIcon from "../assets/TGIcon.png";
 import twIcon from "../assets/TWIcon.png";
 

@@ -241,10 +241,10 @@ export default function BakeCard() {
           <iframe src="https://giphy.com/embed/RLj49U7KXsW9SmrLB6" width="100%" style={{ border: "100px" }} allowFullScreen>
           </iframe>
         </div> */}
-        <div className="font-effect-neon" style={{ fontWeight: "bold", fontSize: "60px", color: "#e30feb", marginTop: "20px", marginBottom: "10px", marginLeft: "10px", fontFamily: "monospace" }}> Amplifier</div>
+        <div className="font-effect-neon" style={{ fontWeight: "bold", fontSize: "60px", color: "#0648ca", marginTop: "20px", marginBottom: "10px", marginLeft: "10px", fontFamily: "monospace" }}> Amplifier</div>
         <Connect responsive={false} />
         <Typography variant="h6" marginTop={-3}>
-          <br /> The First PLS Miner <br /><br />The PLS Reward Pool with the highest daily return and lowest dev fee
+          <br /> The Best BNB Miner <br /><br />The BNB Reward Pool with the highest daily return and lowest dev fee
         </Typography>
       </Wrapper>
       <div>
@@ -266,7 +266,7 @@ export default function BakeCard() {
             mt={3}
           >
             <Typography variant="body1">Contract</Typography>
-            <Typography variant="h5">{contractBNB} PLS</Typography>
+            <Typography variant="h5">{contractBNB} BNB</Typography>
           </Grid>
           <Grid
             container
@@ -275,7 +275,7 @@ export default function BakeCard() {
             mt={3}
           >
             <Typography variant="body1">Wallet</Typography>
-            <Typography variant="h5">{walletBalance.bnb} PLS</Typography>
+            <Typography variant="h5">{walletBalance.bnb} BNB</Typography>
           </Grid>
           <Grid
             container
@@ -316,7 +316,7 @@ export default function BakeCard() {
                 Your Rewards
               </Typography>
               <Typography variant="h5" fontWeight="bolder">
-                {walletBalance.rewards} PLS
+                {walletBalance.rewards} BNB
               </Typography>
             </Grid>
             <ButtonContainer container>

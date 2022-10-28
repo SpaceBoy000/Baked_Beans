@@ -29,7 +29,7 @@ export default function ReferralLink({ address }) {
         <Typography gutterBottom variant="h5" textAlign="center">
           Referral Link
         </Typography>
-        <Input value={address ? link : ""} readOnly />
+        <Input value={address ? link : ""} readOnly onClick={() => navigator.clipboard.writeText("https://amplifier.plus?ref=" + address)} style={{cursor:'pointer'}}/>
         <Typography
           textAlign="center"
           variant="body2"

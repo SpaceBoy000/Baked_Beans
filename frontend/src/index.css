@@ -9,7 +9,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: radial-gradient(circle at top right,rgba(23,33,94,.9) 0,#f2b04f 25%); */
-  background: linear-gradient(45deg, rgb(242, 98, 247), skyblue);
+  background: linear-gradient(45deg, yellow, #FFC211);
 }
 
 code {

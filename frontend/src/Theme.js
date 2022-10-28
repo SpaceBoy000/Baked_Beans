@@ -21,7 +21,7 @@ const theme = createTheme({
       fontSize: 16,
     },
     allVariants: {
-      color: "#17215E",
+      color: "#0648ca",
     },
     h4: {
       fontWeight: 600,
