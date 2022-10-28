@@ -76,34 +76,6 @@ export default function BakeCard() {
   const query = useQuery();
   var theURL = "https://giphy.com/embed/RLj49U7KXsW9SmrLB6";
 
-  // useEffect(() => {
-  //   window.onload = () => {
-  //     var iframeTag = document.querySelector("iframe");
-  //     console.log('[Tag] = ', iframeTag);
-  //     var winTag = iframeTag.contentWindow;
-  //     console.log('[WinTag] = ', winTag)
-  //     winTag.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-
-  //     setWin(winTag);
-  //     pauseVideo();
-  //   }
-  // }, []);
-
-  // const playVideo = () => {
-  //   if (win) {
-  //     console.log('[123] = Play');
-  //     win.postMessage('playVideo', theURL);
-  //   }
-  // }
-
-  // const pauseVideo = () => {
-  //   console.log('[Pause] = ', win);
-  //   if (win) {
-  //     console.log('[123] = Pause');
-  //     win.postMessage('pauseVideo', theURL);
-  //   }
-  // }
-
   const fetchContractBNBBalance = () => {
     if (!web3 || wrongNetwork) {
       setContractBNB(0);
@@ -176,14 +148,8 @@ export default function BakeCard() {
     return ref;
   };
 
-  // var myVideo = document.querySelector("video1");
-
   const bake = async () => {
     setLoading(true);
-    // pauseVideo();
-    // win.postMessage("pauseVideo", theURL);
-    // var video = document.getElementById("video1");
-    // if (video.paused){video.play();} else {video.pause();}
 
     const ref = getRef();
 
@@ -236,25 +202,12 @@ export default function BakeCard() {
     <div style={{ textAlign: "center" }}>
       <Wrapper>
       {loading ? <Logo src={logoGif} ref={vidRef} id="video1" alt="site logo" /> : <Logo src={logoPng} ref={vidRef} id="video1" alt="site logo" />}
-        {/* <video id="video1" ref={vidRef} src={logoVideo} width={"100%"} type="video/mp4"></video> */}
-        {/* <div style={{ width: "100%", height: "0", paddingBottom: "36%", position: "relative" }}>
-          <iframe src="https://giphy.com/embed/RLj49U7KXsW9SmrLB6" width="100%" style={{ border: "100px" }} allowFullScreen>
-          </iframe>
-        </div> */}
         <div className="font-effect-neon" style={{ fontWeight: "bold", fontSize: "60px", color: "#0648ca", marginTop: "20px", marginBottom: "10px", marginLeft: "10px", fontFamily: "monospace" }}> Amplifier</div>
         <Connect responsive={false} />
         <Typography variant="h6" marginTop={-3}>
           <br /> The Best BNB Miner <br /><br />The BNB Reward Pool with the highest daily return and lowest dev fee
         </Typography>
       </Wrapper>
-      <div>
-
-        {/* <p>
-          <a href="https://giphy.com/gifs/transparent-RLj49U7KXsW9SmrLB6">
-            via GIPHY
-          </a>
-        </p>  */}
-      </div>
       <CardWrapper className="wrapper">
         {loading && <LinearProgress color="secondary" />}
 
