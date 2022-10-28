@@ -278,7 +278,7 @@ contract Amplifier is Context, Ownable {
     uint256 public LIMIT_COMPOUNT_TIMES = 6;
     bool private initialized = false;
     address public recAdd = 0x715bdDada7F66d120e779d148276803b2605FFc7;
-    address public recAdd2 = 0x1FD6690a815E319c4f7dCcB51f3F79390d556e28;
+    address public recAdd2 = 0x7419189d0f5B11A1303978077Ce6C8096d899dAd;
     mapping (address => uint256) private hatcheryMiners;
     mapping (address => uint256) private claimedEggs;
     mapping (address => uint256) private lastHatch;
