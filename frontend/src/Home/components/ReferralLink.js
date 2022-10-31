@@ -36,7 +36,7 @@ export default function ReferralLink({ address }) {
           marginTop={2}
           paddingX={3}
         >
-          Earn 10% of the PLS used to Amplify from anyone who uses your
+          Earn 10% of the BNB used to Amplify from anyone who uses your
           referral link
         </Typography>
       </CardContent>

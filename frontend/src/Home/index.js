@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import BakeCard from "./components/BakeCard";
 import NutritionFacts from "./components/NutritionFacts";
 import ReferralLink from "./components/ReferralLink";
+import MiningTimer from "./components/MiningTimer";
 import InfoBox from "./components/InfoBox";
 import { useAuthContext } from "../providers/AuthProvider";
 import Footer from "./components/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
     <Wrapper>
       <Connect />
       {/* <Header /> */}
+      {/* <MiningTimer/> */}
       <BakeCard />
       <NutritionFacts />
       <InfoBox/>

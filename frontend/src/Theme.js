@@ -15,10 +15,25 @@ const theme = createTheme({
   typography: {
     fontFamily: "Montserrat",
     body1: {
-      fontSize: 20,
+      fontSize: 25,
     },
     body2: {
       fontSize: 16,
+    },
+    body5: {
+      fontSize: 35,
+      color: "rgb(123,63,228)",
+      fontWeight: 700,
+    },
+    body6: {
+      fontSize: 35,
+      color: "rgb(123,63,228)",
+      fontWeight: 700,
+    },
+    body7: {
+      fontSize: 14,
+      color: "rgb(123,63,228)",
+      fontWeight: 700,
     },
     allVariants: {
       color: "#0648ca",

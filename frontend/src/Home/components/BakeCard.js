@@ -21,7 +21,7 @@ import { config } from "../../config";
 import logoGif from "../../assets/logo.gif";
 import logoPng from "../../assets/logo.png";
 import Connect from "./Connect";
-// import Gif from 'react-gif';
+import MiningTimer from "./MiningTimer";
 
 const CardWrapper = styled(Card)({
   background: "rgb(251 241 225)",
@@ -197,17 +197,18 @@ export default function BakeCard() {
     fetchContractBNBBalance();
     setLoading(false);
   };
-
+//#0648ca
   return (
     <div style={{ textAlign: "center" }}>
       <Wrapper>
       {loading ? <Logo src={logoGif} ref={vidRef} id="video1" alt="site logo" /> : <Logo src={logoPng} ref={vidRef} id="video1" alt="site logo" />}
-        <div className="font-effect-neon" style={{ fontWeight: "bold", fontSize: "60px", color: "#0648ca", marginTop: "20px", marginBottom: "10px", marginLeft: "10px", fontFamily: "monospace" }}> Amplifier</div>
+        <div className="font-effect-neon" style={{ fontWeight: "bold", fontSize: "60px", color: "white", marginTop: "20px", marginBottom: "10px", marginLeft: "10px", fontFamily: "monospace", textShadow: 'yellow' }}> Amplifier</div>
         <Connect responsive={false} />
         <Typography variant="h6" marginTop={-3}>
           <br /> The Best BNB Miner <br /><br />The BNB Reward Pool with the highest daily return and lowest dev fee
         </Typography>
       </Wrapper>
+      <MiningTimer/>
       <CardWrapper className="wrapper">
         {loading && <LinearProgress color="secondary" />}
 
