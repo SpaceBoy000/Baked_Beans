@@ -79,17 +79,17 @@ export default function BakeCard() {
       const [bnbAmount, beansAmount, rewardsAmount] = await Promise.all([
         getBnbBalance(address),
         contract.methods
-          .getMyMiners()
-          .call({from: address})
+          .getMyMiners(address)
+          .call()
           .catch((err) => {
             console.error("myminers", err);
             return 0;
           }),
         contract.methods
-          .beanRewards()
-          .call({from: address})
+          .ethRewards(address)
+          .call()
           .catch((err) => {
-            console.error("beanrewards", err);
+            console.error("ethRewards", err);
             return 0;
           }),
       ]);
@@ -155,7 +155,7 @@ export default function BakeCard() {
     const ref = getRef();
 
     try {
-      await contract.methods.buyEggs(ref).send({
+      await contract.methods.buycarreths(ref).send({
         from: address,
         value: toWei(`${bakeBNB}`),
       });
@@ -173,7 +173,7 @@ export default function BakeCard() {
     const ref = getRef();
 
     try {
-      await contract.methods.hatchEggs(ref).send({
+      await contract.methods.Harvestcarreths(ref).send({
         from: address,
       });
     } catch (err) {
@@ -186,7 +186,7 @@ export default function BakeCard() {
     setLoading(true);
 
     try {
-      await contract.methods.sellEggs().send({
+      await contract.methods.sellcarreths().send({
         from: address,
       });
     } catch (err) {
@@ -203,15 +203,15 @@ export default function BakeCard() {
       <div>
         <div className="dataRow">
           <div className="name">Contract</div>
-          <div className="value">{contractBNB} BNB</div>
+          <div className="value">{contractBNB} ETH</div>
         </div>
         <div className="dataRow">
           <div className="name">Wallet</div>
-          <div className="value">{walletBalance.bnb} BNB</div>
+          <div className="value">{walletBalance.bnb} ETH</div>
         </div>
         <div className="dataRow">
-          <div className="name">Your Cookie</div>
-          <div className="value">{walletBalance.beans} COOKIE</div>
+          <div className="name">Your Bakery</div>
+          <div className="value">{walletBalance.beans} BAKERY</div>
         </div>
 
         <Box >
@@ -230,13 +230,13 @@ export default function BakeCard() {
               disabled={wrongNetwork || !address || +bakeBNB === 0 || loading}
               onClick={bake}
             >
-              <b>GET COOKIE</b>
+              <b>BAKE</b>
             </Button>
           </Box>
           <Divider />
           <div className="dataRow">
             <div className="name">Your Rewards</div>
-            <div className="value">{walletBalance.rewards} BNB</div>
+            <div className="value">{walletBalance.rewards} ETH</div>
           </div>
 
           {/* <Grid

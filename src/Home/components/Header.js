@@ -25,34 +25,34 @@ export default function Header() {
       <Typography variant="h6" marginTop={-3} style={{color: "#febf33"}}>
         The BNB Reward Pool with the 10% daily return and 13% referral rewards and lowest dev fee
       </Typography>
-      <div>
+      {/* <div>
         <Grid container direction="row" spacing={2} style={{width:"100%", display:"flex", justifyContent:"space-evenly"}}>
           <Grid item xs={6} sm={6} md={6} lg={6}>
-            {/* <Button
+            <Button
               className="stake-button, staking-button"
               variant="contained"
               color="white"
               // onClick={() => {
               //   unStake(1);
               // }}
-            > */}
+            >
               <span style={{fontWeight:"200", color:"white"}}>WHITEPAPER</span>
-            {/* </Button> */}
+            </Button>
           </Grid>
           <Grid item xs={6} sm={6} md={6} lg={6}>
-            {/* <Button
+            <Button
               className="stake-button, staking-button"
               variant="contained"
               color="white"
               // onClick={() => {
               //   unStake(1);
               // }}
-            > */}
+            >
               <span style={{fontWeight:"200", color:"white"}}>AUDIT REPORT</span>
-            {/* </Button> */}
+            </Button>
           </Grid>
         </Grid>
-      </div>
+      </div> */}
     </Wrapper>
   );
 }

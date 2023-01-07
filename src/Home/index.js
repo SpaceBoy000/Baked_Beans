@@ -60,19 +60,19 @@ export default function Home() {
               <Connect />
             </div>
           </div>
-          <iframe src="https://free.timeanddate.com/countdown/i8codjw4/cf12/cm0/cu4/ct0/cs0/ca0/co1/cr0/ss0/cacfff/cpc000/pct/tcfff/fs200/szw320/szh135/tac000/tpc000/iso2022-06-07T18:00:00" allowtransparency="true" frameborder="0" width="217" height="58"></iframe>
+          {/* <iframe src="https://free.timeanddate.com/countdown/i8codjw4/cf12/cm0/cu4/ct0/cs0/ca0/co1/cr0/ss0/cacfff/cpc000/pct/tcfff/fs200/szw320/szh135/tac000/tpc000/iso2022-06-07T18:00:00" allowtransparency="true" frameborder="0" width="217" height="58"></iframe> */}
           <div style={{display:"flex", justifyContent:"center"}}>
-            <p class="slogan" style={{lineHeight:"25px", width:"400px", marginTop:"1rem"}}>The BNB Reward Pool with the 12% daily return and 15% referral rewards and lowest dev fee
-            </p>
+            <p class="slogan" >The ETH Reward Pool with the 8% daily return and 5% referral rewards and low dev fee</p>
+            {/* <p class="slogan" >Can we contact on TG? https://t.me/cryptospaceboy000</p> */}
           </div>
-          <div class="buttonGroup">
+          {/* <div class="buttonGroup">
             <a href="https://docdro.id/VSIGjMA" target="_blank" rel="noopener noreferrer">
               <div class="whitepaper">Whitepaper</div>
             </a>
             <a href="" target="_blank" rel="noopener noreferrer">
               <div class="whitepaper">AUDIT</div>
             </a>
-          </div>
+          </div> */}
           <div className="mainContent">
             <div className="box leftBox">
               <BakeCard />

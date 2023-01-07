@@ -47,7 +47,7 @@ export default function ReferralLink({ address }) {
   return (
     <div className="referral">
       <h1>Referral Link</h1>
-      <p>Earn 15% of the BNB used to Cookie from anyone who uses your referral link</p>
+      <p>Earn 5% of the ETH used to Bakery from anyone who uses your referral link</p>
       <div class="refWrapper">
         <Input value={address ? link : ""} readOnly />
         <Box>

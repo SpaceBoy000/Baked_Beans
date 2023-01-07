@@ -38,7 +38,7 @@ export default function PriceInput({ value, max, onChange = () => {} }) {
         fontWeight={500}
         color="black"
       >
-        BNB
+        ETH
       </Typography>
     </Box>
   );

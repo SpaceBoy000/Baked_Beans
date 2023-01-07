@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(circle at top right,rgba(23,33,94,.9) 0,#f2b04f 25%);
+  /* background: radial-gradient(circle at top right,rgba(23,33,94,.9) 0,#f2b04f 25%); */
 }
 
 
@@ -94,19 +94,20 @@ code {
 }
 
 .home .header .logo {
-  width: 100px;
+  width: 200px;
   /* visibility: "visible"; */
-  margin-left: -50px;
+  /* margin-left: -50px; */
 }
 
 @media (max-width: 765px) {
   .home .header .logo {
-      width: 150px;
+      width: 250px;
       margin: 20px auto;
   }
 }
 
 .home .header .socialMedias {
+  display: none;
   /* width: 300px; */
   text-align: right;
   border-radius: 20px;
@@ -131,15 +132,17 @@ code {
 }
 
 .home .slogan {
-  font-size: 16px;
-  line-height: 16px;
-  color: white;
+  font-size: 20px;
+  line-height: 25px;
+  color: #e78400;
   text-align: center;
+  font-weight: 600;
+  max-width: 450px;
 }
 
 @media (max-width: 765px) {
   .home .slogan {
-      line-height: 20px;
+      line-height: 25px;
   }
 }
 /* .home p {
@@ -206,8 +209,8 @@ code {
 
 .home .mainContent .leftBox {
   padding: 20px;
-  /* background: #FA89F6; */
-  background: rgb(252, 250, 220);
+  background: #ffc37e;
+  /* background: rgb(252, 250, 220); */
   border-radius: 20px;
 }
 
@@ -244,7 +247,7 @@ code {
 }
 
 .home .mainContent .contractInfo {
-  background: rgb(252, 250, 220);
+  background: #f89b1e;
   border-radius: 20px;
   padding: 20px;
   display: flex;
@@ -259,7 +262,7 @@ code {
 
 .home .mainContent .referral {
   /* font-family: cursive; */
-  background: rgb(252, 250, 220);
+  background: #b16438;
   color: black;
   border-radius: 20px;
   padding: 20px;
@@ -352,6 +355,6 @@ a {
 
 .name {
   text-align: left;
-  width: 300px;
+  /* width: 300px; */
 }
 
